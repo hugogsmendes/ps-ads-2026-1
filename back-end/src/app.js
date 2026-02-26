@@ -15,4 +15,13 @@ app.use(cookieParser())
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
 
+/**************** ROTAS *******************/
+
+// Middleware de verificação de autorização
+import authMiddleware from './middleware/auth.js'
+app.use(authMiddleware)
+
+import customersRoute from './routes/customers.js'
+app.use('/customers', customersRoute)
+
 export default app
