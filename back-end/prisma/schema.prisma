@@ -41,3 +41,11 @@ model Car {
  selling_price     Decimal?      // Preço de venda; preenchimento opcional
 }
 
+model User {
+ id                Int           @id @default(autoincrement())
+ fullname          String        // Nome completo
+ username          String        @unique   // Não pode se repetir na tabela
+ email             String        @unique
+ password          String       
+ is_admin          Boolean       @default(false)
+}
