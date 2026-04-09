@@ -33,4 +33,7 @@ app.use('/cars', carsRoute)
 import usersRoute from './routes/users.js'
 app.use('/users', usersRoute)
 
+import sellersRoute from './routes/sellers.js'
+app.use('/sellers', sellersRoute)
+
 export default app
