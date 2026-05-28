@@ -1,20 +1,15 @@
 import React from 'react'
 
-
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 
-
 import AccountCirleIcon from '@mui/icons-material/AccountCircle'
-
 
 import { Link, useNavigate } from 'react-router-dom'
 import { feedbackWait, feedbackConfirm, feedbackNotify } from './Feedback'
 
-
 import AuthContext from '../contexts/AuthContext'
 import fetchAuth from '../lib/fetchAuth'
-
 
 export default function AuthWidgets() {
   const { authState, setAuthState } = React.useContext(AuthContext)
@@ -23,9 +18,7 @@ export default function AuthWidgets() {
     redirectTo
   } = authState
 
-
   const navigate = useNavigate()
-
 
   async function handleLogoutButtonClick() {
     if (await feedbackConfirm('Deseja realmente sair?')) {
@@ -33,10 +26,8 @@ export default function AuthWidgets() {
       try {
         await fetchAuth.post('/users/logout')
 
-
         // Apaga o token armazenado no localStorage
         // window.localStorage.removeItem(import.meta.env.VITE_AUTH_TOKEN_NAME)
-
 
         // Apaga as informações (em memória) do usuário autenticado
         setAuthState({ ...authState, authUser: null })
@@ -53,7 +44,6 @@ export default function AuthWidgets() {
       }
     }
   }
-
 
   if (authUser) return <>
     <AccountCirleIcon color="secondary" fontSize="small" sx={{ mr: 1 }} />

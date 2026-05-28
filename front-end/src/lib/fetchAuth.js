@@ -22,7 +22,7 @@ function buildOptions(method = 'GET', body = null) {
             'Content-Type': 'application/json; charset=UTF-8'
         },
         // Pede para o back-end enviar cookies
-        // credentials: 'include'
+        credentials: 'include'
     }
 
 

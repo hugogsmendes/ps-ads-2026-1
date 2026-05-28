@@ -26,17 +26,17 @@ export default function CarsList() {
     },    
     {
       field: 'color',
-      headerName: 'cor',
+      headerName: 'Cor',
       width: 150
     },
     {
       field: 'year_manufacture',
-      headerName: 'ano de fabricação',
+      headerName: 'Ano de Fabricação',
       width: 150
     },
     {
       field: 'imported',
-      headerName: 'importado',
+      headerName: 'Importado',
       width: 150,
       // exibe "Sim" se o valor for 'true', ou nada "" se for 'false'
       renderCell: (params) => params.row.imported ? "Sim" : ""
@@ -84,12 +84,12 @@ export default function CarsList() {
   async function loadData() {
     try {
       // Conectamos ao servidor remoto e esperamos uma resposta
-      const response = await fetch(import.meta.env.VITE_API_BASE + '/cars')
+      const result = await fetchAuth.get(`/cars`)
       // Extraímos da resposta os dados em formato JSON
-      const data = await response.json()
+      // const data = await response.json()
 
       // Armazenamos os dados na variável de estado
-      setCars(data)
+      setCars(result)
     }
     catch(error) {
       // Exibimos o erro no console, para efeitos de depuração

@@ -13,7 +13,7 @@ export default function HeaderBar() {
       <AppBar position="static" enableColorOnDark>
         <Toolbar variant="dense">
           <MainMenu />
-          <Box sx={{ flexGro: 1}}>
+          <Box sx={{ flexGrow: 1}}>
           <a href="/">
            <img src={logotipo} alt="Logotipo Karangos" title="Karangos &bull; Os velhinhos são nossa paixão" style={{ width: '300px' }} />
           </a>
